@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import belLogo from "C:/Users/harid/Downloads/Projects/Internship project/ai-prescription-app/frontend/src/assets/bel-logo.png";
+import belLogo from "../assets/bel-logo.png";
 import {Mic,MicOff,FileText,Download,Save,RefreshCw,Activity,User,Pill,Stethoscope} from "lucide-react";
 const SpeechRecorder = () => {
   // =========================
