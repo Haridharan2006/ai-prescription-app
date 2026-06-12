@@ -1411,46 +1411,48 @@ const SpeechRecorder = () => {
 
                 <div className="space-y-4">
 
-                  <input
-                    type="text"
-                    placeholder="Patient Name"
-                    value={patientName}
-                    onChange={(e) =>
-                      setPatientName(e.target.value)
-                    }
-                    className="w-full border p-4 rounded-xl"
-                  />
+                  <div className="flex items-center gap-4">
+                    <label className="w-28 font-semibold text-gray-700">
+                      Name:
+                    </label>
 
-                  <input
-                    type="number"
-                    placeholder="Age"
-                    value={patientAge}
-                    onChange={(e) =>
-                      setPatientAge(e.target.value)
-                    }
-                    className="w-full border p-4 rounded-xl"
-                  />
+                    <input
+                      type="text"
+                      value={patientName}
+                      onChange={(e) => setPatientName(e.target.value)}
+                      className="flex-1 border rounded-lg p-3"
+                    />
+                  </div>
 
-                  <select
-                    value={gender}
-                    onChange={(e) =>
-                      setGender(e.target.value)
-                    }
-                    className="w-full border p-4 rounded-xl"
-                  >
-                    <option value="">
-                      Select Gender
-                    </option>
-                    <option value="Male">
-                      Male
-                    </option>
-                    <option value="Female">
-                      Female
-                    </option>
-                    <option value="Other">
-                      Other
-                    </option>
-                  </select>
+                  <div className="flex items-center gap-4">
+                    <label className="w-28 font-semibold text-gray-700">
+                      Age:
+                    </label>
+
+                    <input
+                      type="number"
+                      value={patientAge}
+                      onChange={(e) => setPatientAge(e.target.value)}
+                      className="flex-1 border rounded-lg p-3"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <label className="w-28 font-semibold text-gray-700">
+                      Gender:
+                    </label>
+
+                    <select
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
+                      className="flex-1 border rounded-lg p-3"
+                    >
+                      <option value="">Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
 
                 </div>
               </div>
@@ -1462,50 +1464,82 @@ const SpeechRecorder = () => {
                 <h2 className="text-2xl font-bold mb-6 text-slate-800">
                   Patient Vitals
                 </h2>
+                <div className="space-y-4">
 
-                <div className="grid grid-cols-2 gap-4">
+                  {/* Temperature */}
+                  <div className="flex items-center gap-4">
+                    <label className="w-40 font-semibold text-slate-700">
+                      Temperature:
+                    </label>
 
-                  <input
-                    type="text"
-                    placeholder="Temperature"
-                    value={temperature}
-                    onChange={(e) =>
-                      setTemperature(e.target.value)
-                    }
-                    className="border p-4 rounded-xl"
-                  />
+                    <input
+                      type="text"
+                      value={temperature}
+                      onChange={(e) => setTemperature(e.target.value)}
+                      className="flex-1 p-3 border border-gray-300 rounded-lg"
+                    />
 
-                  <input
-                    type="text"
-                    placeholder="Oxygen Level"
-                    value={oxygenLevel}
-                    onChange={(e) =>
-                      setOxygenLevel(e.target.value)
-                    }
-                    className="border p-4 rounded-xl"
-                  />
+                    <span className="w-16 text-gray-600 font-medium">
+                      °F
+                    </span>
+                  </div>
 
-                  <input
-                    type="text"
-                    placeholder="Blood Pressure"
-                    value={bloodPressure}
-                    onChange={(e) =>
-                      setBloodPressure(e.target.value)
-                    }
-                    className="border p-4 rounded-xl"
-                  />
+                  {/* Oxygen */}
+                  <div className="flex items-center gap-4">
+                    <label className="w-40 font-semibold text-slate-700">
+                      Oxygen Level:
+                    </label>
 
-                  <input
-                    type="text"
-                    placeholder="Pulse Rate"
-                    value={pulseRate}
-                    onChange={(e) =>
-                      setPulseRate(e.target.value)
-                    }
-                    className="border p-4 rounded-xl"
-                  />
+                    <input
+                      type="text"
+                      value={oxygenLevel}
+                      onChange={(e) => setOxygenLevel(e.target.value)}
+                      className="flex-1 p-3 border border-gray-300 rounded-lg"
+                    />
+
+                    <span className="w-16 text-gray-600 font-medium">
+                      %
+                    </span>
+                  </div>
+
+                  {/* Blood Pressure */}
+                  <div className="flex items-center gap-4">
+                    <label className="w-40 font-semibold text-slate-700">
+                      Blood Pressure:
+                    </label>
+
+                    <input
+                      type="text"
+                      value={bloodPressure}
+                      onChange={(e) => setBloodPressure(e.target.value)}
+                      className="flex-1 p-3 border border-gray-300 rounded-lg"
+                    />
+
+                    <span className="w-16 text-gray-600 font-medium">
+                      mmHg
+                    </span>
+                  </div>
+
+                  {/* Pulse */}
+                  <div className="flex items-center gap-4">
+                    <label className="w-40 font-semibold text-slate-700">
+                      Pulse Rate:
+                    </label>
+
+                    <input
+                      type="text"
+                      value={pulseRate}
+                      onChange={(e) => setPulseRate(e.target.value)}
+                      className="flex-1 p-3 border border-gray-300 rounded-lg"
+                    />
+
+                    <span className="w-16 text-gray-600 font-medium">
+                      bpm
+                    </span>
+                  </div>
 
                 </div>
+                
               </div>
 
             </div>
@@ -1660,7 +1694,25 @@ const SpeechRecorder = () => {
                   </button>
 
                 </div>
+                <div className="grid grid-cols-12 gap-3 mb-3 px-1">
+                  <div className="col-span-4 font-semibold text-slate-700">
+                    Medicine Name
+                  </div>
 
+                  <div className="col-span-2 font-semibold text-slate-700">
+                    Dosage
+                  </div>
+
+                  <div className="col-span-2 font-semibold text-slate-700">
+                    Duration
+                  </div>
+
+                  <div className="col-span-3 font-semibold text-slate-700">
+                    Instruction
+                  </div>
+
+                  <div className="col-span-1"></div>
+                </div>
                 {prescription.medicines.map(
                   (medicine, index) => (
 
